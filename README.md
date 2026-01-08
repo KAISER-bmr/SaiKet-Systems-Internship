@@ -96,7 +96,7 @@
 ---
 
 ## 📧 Contact
-**Email:** prathameshchaumwal123.com  
+**Email:** prathameshchaumwal123@gmail.com  
 **LinkedIn:** https://www.linkedin.com/in/prathamesh-chaumwal-168512375/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bj1UFja%2FTRI6lXuuzAcrVzg%3D%3D 
 **GitHub:** https://www.linkedin.com/in/prathamesh-chaumwal-168512375/overlay/about-this-profile/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3Bj1UFja%2FTRI6lXuuzAcrVzg%3D%3D
 
