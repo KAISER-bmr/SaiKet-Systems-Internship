@@ -22,7 +22,7 @@
 ---
 
 ### 🔄 Task 2: Responsive E-Commerce Landing Page
-**Status:** 🔄 In Progress  
+**Status:** ✅ Completed
 **Technologies:** HTML, CSS, Bootstrap/Tailwind, JavaScript  
 **Description:** Creating a responsive e-commerce landing page with interactive features.  
 📂 [View Task 2](./Task-2-Ecommerce-Landing/)
