@@ -2,7 +2,7 @@
 
 ![Internship](https://img.shields.io/badge/Internship-Full%20Stack%20Development-blue)
 ![Status](https://img.shields.io/badge/Status-In%20Progress-yellow)
-![Tasks Completed](https://img.shields.io/badge/Tasks%20Completed-4%2F6-success)
+![Tasks Completed](https://img.shields.io/badge/Tasks%20Completed-5%2F6-success)
 
 ## 👨‍💻 Intern Information
 **Name:** Prathamesh Chaumwal  
@@ -53,10 +53,7 @@ Created a fully functional e-commerce landing page with interactive shopping car
 - Total price calculation
 - Newsletter signup with form validation
 - Hot deals section with special pricing
-- Category browsing cards
 - Fully responsive design (mobile & desktop)
-- Smooth animations and transitions
-- Toast notifications for user feedback
 
 📂 **[View Task 2 Code](./Task-2-Ecommerce-Landing/)**
 
@@ -71,16 +68,15 @@ Created a fully functional e-commerce landing page with interactive shopping car
 Built a comprehensive to-do list application using React.js with full CRUD functionality, demonstrating mastery of React fundamentals, component-based architecture, and modern hooks.
 
 **Key Features:**
-- ✨ Add new tasks with validation
-- ✏️ Edit existing tasks inline with save/cancel
-- 🗑️ Delete tasks with smooth animations
-- ✅ Mark tasks as complete/incomplete with checkbox
-- 🔍 Filter tasks by status (All, Active, Completed)
-- 📊 Real-time statistics dashboard (Total, Active, Completed tasks)
-- 🎨 Modern gradient UI with purple theme
-- 📱 Fully responsive design
-- ⌨️ Keyboard shortcuts (Enter to save, Escape to cancel)
-- 🎭 Empty state messages for better UX
+- Add new tasks with validation
+- Edit existing tasks inline with save/cancel
+- Delete tasks with smooth animations
+- Mark tasks as complete/incomplete with checkbox
+- Filter tasks by status (All, Active, Completed)
+- Real-time statistics dashboard (Total, Active, Completed tasks)
+- Modern gradient UI with purple theme
+- Fully responsive design
+- Keyboard shortcuts (Enter to save, Escape to cancel)
 
 **Technical Implementation:**
 - React functional components
@@ -103,66 +99,83 @@ Built a comprehensive to-do list application using React.js with full CRUD funct
 Developed a RESTful API with complete CRUD operations for User management, implementing industry-standard practices for API design, error handling, and data validation.
 
 **Key Features:**
-- **✅ GET /users** - Retrieve all users
-- **✅ GET /users/:id** - Retrieve user by ID
-- **✅ POST /users** - Create new user
-- **✅ PUT /users/:id** - Update existing user
-- **✅ DELETE /users/:id** - Delete user
-- 🔒 Comprehensive data validation (name, email, age)
-- 📧 Email format validation with regex
-- 🚫 Duplicate email prevention
-- ⚠️ Proper HTTP status codes (200, 201, 400, 404, 500)
-- 📝 Consistent JSON response format
-- 💾 In-memory data storage (array-based)
-- 🔢 Auto-incrementing ID generation
-- 🎨 Elegant server startup display
-- 📚 API documentation endpoint
-
-**API Endpoints:**
-```
-GET    /           - API Documentation
-GET    /users      - Get all users
-GET    /users/:id  - Get specific user
-POST   /users      - Create new user
-PUT    /users/:id  - Update user
-DELETE /users/:id  - Delete user
-```
-
-**User Entity Schema:**
-- **name** (string, required, min 2 chars)
-- **email** (string, required, valid email format, unique)
-- **age** (number, required, 1-150)
-
-**Technical Implementation:**
-- Express.js routing and middleware
-- Request validation and sanitization
-- Error handling middleware
-- JSON parsing with express.json()
-- RESTful API design principles
-- HTTP status code best practices
-- In-memory database simulation
-- Postman testing and validation
+- GET /users - Retrieve all users
+- GET /users/:id - Retrieve user by ID
+- POST /users - Create new user
+- PUT /users/:id - Update existing user
+- DELETE /users/:id - Delete user
+- Comprehensive data validation (name, email, age)
+- Email format validation with regex
+- Duplicate email prevention
+- Proper HTTP status codes (200, 201, 400, 404, 500)
+- Consistent JSON response format
+- In-memory data storage
+- Auto-incrementing ID generation
 
 📂 **[View Task 4 Code](./Task-4-REST-API/)**
 
 ---
 
-### ⏳ Task 5: Database Integration
-**Status:** ⏳ Not Started  
-**Technologies:** MySQL/PostgreSQL, Node.js, Express.js  
+### ✅ Task 5: Database Integration
+**Status:** ✅ Completed  
+**Completion Date:** January 2026  
+**Technologies:** Node.js, Express.js, MySQL, mysql2, dotenv  
 
 **Description:**  
-Integrate the REST API with a relational database for persistent data storage.
+Successfully integrated the REST API with MySQL database, transforming the application from in-memory storage to persistent data storage. Implemented complete database connection, SQL queries, and production-ready database practices.
 
-**Planned Features:**
-- Database connection setup with MySQL/PostgreSQL
-- SQL queries integration with API endpoints
-- CRUD operations with database persistence
-- Data validation and error handling
-- Database schema design and migrations
-- Connection pooling
+**Key Features:**
+- 🗄️ **MySQL Database Connection** - Persistent data storage
+- 🔄 **Connection Pooling** - Efficient database resource management
+- 🔐 **Environment Variables** - Secure credential management with dotenv
+- 📝 **SQL Query Implementation** - All CRUD operations with SQL
+- ✅ **Data Persistence** - Data survives server restarts
+- 🔢 **Auto-Increment IDs** - MySQL-managed primary keys
+- 📅 **Timestamp Tracking** - Created_at for all records
+- ⚠️ **Database Error Handling** - Robust error management
+- 🔍 **Email Uniqueness** - Database-level unique constraints
+- 🧪 **Connection Testing** - Startup database verification
 
-📂 Upcoming
+**Database Schema:**
+```sql
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    age INT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+```
+
+**API Endpoints (with MySQL):**
+```
+GET    /           - API Documentation
+GET    /users      - Fetch all users from database
+GET    /users/:id  - Fetch specific user by ID
+POST   /users      - Insert new user into database
+PUT    /users/:id  - Update user in database
+DELETE /users/:id  - Remove user from database
+```
+
+**Technical Implementation:**
+- **mysql2** package for MySQL connectivity
+- Promise-based database operations (async/await)
+- Connection pool with configurable limits
+- Prepared statements for SQL injection prevention
+- Database connection testing on server startup
+- Environment-based configuration
+- Graceful error handling for database failures
+- Transaction-ready architecture
+
+**Key Improvements Over Task 4:**
+- ✅ Data persists across server restarts
+- ✅ Production-ready database storage
+- ✅ Scalable connection pooling
+- ✅ Secure credential management
+- ✅ Database-level data validation
+- ✅ Professional error handling
+
+📂 **[View Task 5 Code](./Task-5-Database-Integration/)**
 
 ---
 
@@ -177,7 +190,10 @@ Build a complete User Management System combining front-end and back-end.
 - User registration and authentication
 - Profile management (add, view, update, delete)
 - Front-end to back-end integration
+- React frontend consuming REST API
 - Full-stack application deployment
+- User authentication system
+- Protected routes and authorization
 
 📂 Upcoming
 
@@ -213,6 +229,7 @@ Build a complete User Management System combining front-end and back-end.
 ## 📚 Learning Outcomes
 
 ### Completed ✅
+
 **Front-End Development:**
 ✅ HTML5 semantic structure and best practices  
 ✅ CSS3 animations and transitions  
@@ -225,40 +242,53 @@ Build a complete User Management System combining front-end and back-end.
 ✅ Component-based architecture  
 ✅ JSX syntax and rendering  
 ✅ Modern build tools (Vite)  
-✅ Conditional rendering and list rendering  
 ✅ Event handling in React  
-✅ Immutable state updates  
-
-**Back-End Development:**
-✅ **Node.js runtime environment**  
-✅ **Express.js framework fundamentals**  
-✅ **RESTful API design principles**  
-✅ **HTTP methods (GET, POST, PUT, DELETE)**  
-✅ **HTTP status codes (200, 201, 400, 404, 500)**  
-✅ **Request/Response handling**  
-✅ **Middleware implementation**  
-✅ **JSON data handling**  
-✅ **Server-side validation**  
-✅ **Error handling and logging**  
-✅ **API testing with Postman**  
-✅ **CRUD operations implementation**  
-
-**General:**
-✅ Git version control and GitHub workflow  
-✅ Advanced JavaScript interactivity  
-✅ E-commerce UI/UX patterns  
-✅ Dynamic content rendering  
-✅ Event handling and DOM manipulation  
 ✅ State management patterns  
 
+**Back-End Development:**
+✅ Node.js runtime environment  
+✅ Express.js framework fundamentals  
+✅ RESTful API design principles  
+✅ HTTP methods (GET, POST, PUT, DELETE)  
+✅ HTTP status codes (200, 201, 400, 404, 500)  
+✅ Request/Response handling  
+✅ Middleware implementation  
+✅ JSON data handling  
+✅ Server-side validation  
+✅ Error handling and logging  
+✅ API testing with Postman  
+✅ CRUD operations implementation  
+
+**Database & Integration:**
+✅ **MySQL database setup and configuration**  
+✅ **SQL query writing (SELECT, INSERT, UPDATE, DELETE)**  
+✅ **Database schema design**  
+✅ **mysql2 package for Node.js**  
+✅ **Connection pooling for performance**  
+✅ **Environment variables with dotenv**  
+✅ **Prepared statements for security**  
+✅ **Database error handling**  
+✅ **Data persistence and storage**  
+✅ **Primary keys and auto-increment**  
+✅ **Unique constraints and validation**  
+✅ **Async/await with database operations**  
+✅ **Production database practices**  
+
+**General Skills:**
+✅ Git version control and GitHub workflow  
+✅ Problem-solving and debugging  
+✅ Code organization and modularity  
+✅ API documentation  
+✅ Project structuring  
+
 ### Upcoming ⏳
-⏳ SQL and database design  
-⏳ Database connection and pooling  
-⏳ ORM (Object-Relational Mapping)  
-⏳ Full-stack application integration  
+⏳ Frontend-Backend integration  
 ⏳ Authentication and authorization  
-⏳ Environment variables and configuration  
-⏳ Production deployment  
+⏳ JWT tokens  
+⏳ Protected routes  
+⏳ User session management  
+⏳ Full-stack deployment  
+⏳ Production optimization  
 
 ---
 
@@ -269,11 +299,11 @@ Task 1: ████████████████████ 100% ✅ Co
 Task 2: ████████████████████ 100% ✅ Completed
 Task 3: ████████████████████ 100% ✅ Completed
 Task 4: ████████████████████ 100% ✅ Completed
-Task 5: ░░░░░░░░░░░░░░░░░░░░   0% ⏳ Not Started
+Task 5: ████████████████████ 100% ✅ Completed
 Task 6: ░░░░░░░░░░░░░░░░░░░░   0% ⏳ Not Started
 ```
 
-**Overall Progress:** 66.67% (4/6 tasks completed) - **Two-Thirds Complete!** 🎉
+**Overall Progress:** 83.33% (5/6 tasks completed) - **Almost There!** 🎉
 
 ---
 
@@ -283,7 +313,7 @@ Task 6: ░░░░░░░░░░░░░░░░░░░░   0% ⏳ No
 - ✅ Build responsive, interactive web applications
 - ✅ Learn modern front-end frameworks (React.js)
 - ✅ Develop RESTful APIs with Node.js
-- ⏳ Integrate databases with backend applications
+- ✅ Integrate databases with backend applications
 - ⏳ Create full-stack applications
 - 🎯 Build a strong portfolio of production-ready projects
 - 🎯 Gain hands-on experience with industry-standard tools
@@ -292,20 +322,45 @@ Task 6: ░░░░░░░░░░░░░░░░░░░░   0% ⏳ No
 
 ## 🏆 Key Achievements
 
-- Successfully built 4 fully functional applications
-- **Transitioned from Frontend to Backend development!** 🚀
+- Successfully built 5 production-ready applications
+- **Mastered the complete backend stack!** 🚀
+- Transitioned from in-memory to persistent database storage
+- **First database integration - MySQL mastery achieved!**
+- Implemented connection pooling and production practices
+- Learned environment-based configuration
 - Mastered React.js component-based architecture
-- **Built first REST API with complete CRUD operations**
-- Implemented complex JavaScript logic for shopping cart and to-do management
-- Learned state management in both vanilla JS and React
-- **Mastered HTTP protocols and RESTful API design**
-- **Gained proficiency in server-side development with Node.js**
-- Mastered responsive design across multiple projects
-- Developed form validation and user feedback patterns
+- Built complete REST API with database backing
+- Implemented robust error handling across all layers
 - Created clean, maintainable, and scalable code
 - Utilized version control effectively with Git and GitHub
-- **API testing expertise with Postman**
-- **Completed 66.67% of internship program!** 🎉
+- API testing expertise with Postman
+- **Completed 83.33% of internship program!** 🎉
+- **One task away from becoming a Full-Stack Developer!** 💪
+
+---
+
+## 🎓 Technical Journey
+
+**Phase 1: Frontend Fundamentals** (Tasks 1-2)
+- HTML, CSS, JavaScript mastery
+- Responsive design principles
+- Interactive UI development
+
+**Phase 2: Modern Frontend** (Task 3)
+- React.js and component architecture
+- State management with hooks
+- Modern build tools (Vite)
+
+**Phase 3: Backend Development** (Tasks 4-5)
+- Node.js and Express.js
+- REST API architecture
+- Database design and integration
+- Production-ready practices
+
+**Phase 4: Full-Stack Integration** (Task 6)
+- Connecting all the pieces
+- Complete application development
+- Deployment and optimization
 
 ---
 
@@ -330,7 +385,7 @@ Task 6: ░░░░░░░░░░░░░░░░░░░░   0% ⏳ No
 
 Special thanks to **SaiKet Systems** for this incredible learning opportunity and for their commitment to nurturing upcoming developers. The structured task progression has been instrumental in building a strong foundation in full-stack development.
 
-**From Frontend to Backend!** The transition from building user interfaces to creating APIs has been an eye-opening experience. Understanding both sides of web development is truly empowering! 💪
+**From Frontend to Database Integration!** The journey from building user interfaces to managing persistent data storage has been transformative. Understanding the complete data flow from database → API → frontend is the essence of full-stack development! 💪
 
 ---
 
@@ -338,17 +393,25 @@ Special thanks to **SaiKet Systems** for this incredible learning opportunity an
 
 This repository documents my journey through the Full Stack Development Internship program at SaiKet Systems. Each task is designed to progressively build my skills from front-end fundamentals to complete full-stack application development.
 
-**Current Milestone:** ✨ **66.67% Complete!** Frontend mastered, Backend initiated. Now moving to database integration!
+**Current Milestone:** ✨ **83.33% Complete!** Frontend mastered, Backend conquered, Database integrated. One final task to unite them all!
 
 **Journey So Far:**
-- **Tasks 1-2:** Mastered HTML, CSS, JavaScript fundamentals
-- **Task 3:** Learned React.js and modern frontend frameworks
-- **Task 4:** Entered backend development with Node.js and Express
-- **Tasks 5-6:** Database integration and full-stack synthesis ahead!
+- **Tasks 1-2:** HTML, CSS, JavaScript fundamentals ✅
+- **Task 3:** React.js and modern frontend frameworks ✅
+- **Task 4:** Node.js, Express, and REST API development ✅
+- **Task 5:** MySQL database integration and persistent storage ✅
+- **Task 6:** Full-stack application synthesis - Coming soon! 🚀
+
+**What's Next:**
+Building a complete User Management System that combines:
+- React frontend (Task 3 knowledge)
+- REST API backend (Task 4 knowledge)
+- MySQL database (Task 5 knowledge)
+- Into one cohesive full-stack application!
 
 ---
 
-**Last Updated:** January 15, 2026
+**Last Updated:** 17 January, 2026
 
 ---
 
